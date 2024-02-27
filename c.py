@@ -13,15 +13,16 @@ def longest_prime_subset(n):
     max_prime = 0
     i = 0
     
-    for j in range(len(p)):
-        sub = int(p[i:j+1])
-        if is_prime(sub):
-            max_prime = max(max_prime, sub)
-        else:
-            i += 1
-    
+    for i in range(len(p)):  
+        for j in range(i, len(p)):  
+            sub = int(p[i:j+1])
+            #print(sub)
+            if is_prime(sub):
+                max_prime = max(max_prime, sub)
+                #print("bbbbbbbbbb",max_prime)
+
     return max_prime
 
 
-n = 12241566
+n = 241566
 print(longest_prime_subset(n))  
